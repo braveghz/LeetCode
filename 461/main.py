@@ -8,9 +8,9 @@ class Solution(object):
         """
         ans = 0
         z = x ^ y
-        while z:
+        while z != 0:
             if z & 1:
-                ans = ans + 1
+                ans += 1
             z >>= 1
         return ans
 
