@@ -29,6 +29,7 @@ def main():
 if __name__ == '__main__':
     main()
 
+
 """
 Hint: 要记得str[s[i]] >= start，start之前的字符就不要了
 """
