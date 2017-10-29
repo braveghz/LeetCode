@@ -1,4 +1,4 @@
-# -*-coding=utf-8-*-
+# -*- coding: utf-8 -*-
 
 
 class Solution(object):
@@ -34,3 +34,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+"""
+从后往前看的话，上坡就加，下坡就减
+"""
