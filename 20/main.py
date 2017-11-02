@@ -70,6 +70,28 @@ class Solution(object):
             return True
 
 
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        if s.count('(') != s.count(')') or s.count(
+                '[') != s.count(']') or s.count('{') != s.count('}'):
+            return False
+        close_param = {'(': ')', '[': ']', '{': '}'}
+        most_closed = []
+        for i in s:
+            if i in close_param:
+                most_closed.append(i)
+            else:
+                if i != close_param[most_closed[-1]]:
+                    return False
+                else:
+                    most_closed.pop()
+        return True
+
+
 def main():
     s = Solution()
     print s.isValid("")
@@ -80,3 +102,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+"""
+我好想理解错题目了..题目里说只有'{','}','[',']','(',')'这几个符号
+噫....
+看了别人一个比较快的写法
+"""
