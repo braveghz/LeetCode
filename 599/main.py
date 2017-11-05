@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
 
-INF = 2147483647
+INF = 2020
 
 # 498 ms 不过很慢就是了....
 class Solution(object):
@@ -31,6 +31,30 @@ class Solution(object):
                     ans[list2[i]] = index
         keys = ans.keys()
         return keys
+
+
+# enumerate()同时列出下标和数据
+# 优化：95 ms
+class Solution(object):
+    def findRestaurant(self, list1, list2):
+        """
+        :type list1: List[str]
+        :type list2: List[str]
+        :rtype: List[str]
+        """
+        dic = {}
+        ans = []
+        sum = INF
+        for index, item in enumerate(list1):
+            dic[item] = index
+        for index, item in enumerate(list2):
+            if item in dic:
+                if sum > dic[item] + index:
+                    ans = [item]
+                    sum = dic[item] + index
+                elif sum == dic[item] + index:
+                    ans.append(item)
+        return ans
 
 
 def main():
