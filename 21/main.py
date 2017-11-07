@@ -33,6 +33,8 @@ class Solution(object):
         return ans.next
 
 # 43 ms
+
+
 class Solution(object):
     def mergeTwoLists(self, l1, l2):
         """
@@ -51,4 +53,3 @@ class Solution(object):
         else:
             l2.next = self.mergeTwoLists(l1, l2.next)
             return l2
-
